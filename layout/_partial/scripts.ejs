@@ -20,6 +20,9 @@
     if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 <% } %>
+<% if (theme.lazyload && theme.lazyload.enable) { %>
+  <script async src="/js/lazyload.js"></script>
+<% } %>
 <% if (theme.plugins.instant_page) { %>
   <script async src="<%- theme.plugins.instant_page %>" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 <% } %>
