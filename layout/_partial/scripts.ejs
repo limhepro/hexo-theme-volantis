@@ -175,6 +175,9 @@
 <% } %>
 
 <% if (enableValine){ %>
+  <% if (theme.lazyload.valine && theme.lazyload.valine.enable) { %>
+    <script async src="/js/lazyvaline.js"></script>
+  <% } else { %>
   <% if (theme.comments.valine.js) { %>
     <%- js(theme.comments.valine.js) %>
   <% } else { %>
@@ -208,6 +211,7 @@
     highlight:'<%= theme.comments.valine.highlight %>'
   })
   </script>
+  <% } %>
 <% } %>
 
 <% if (config.use_cdn && theme.info && theme.info.cdn && theme.info.cdn.js) { %>
